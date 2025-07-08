@@ -10,10 +10,14 @@ import SearchItem from '../../components/searchItem/SearchItem'
 const List = () => {
   const location = useLocation();
 
-  const [destination, setDestination] = useState(location.state.destination);
-  const [date, setDate] = useState(location.state.date);
+  const [destination, setDestination] = useState(location?.state?.destination ?? '');
+  const [date, setDate] = useState(location?.state?.date ?? [{
+    startDate: new Date(),
+    endDate: new Date(),
+    key: 'selection'
+  }]);
   const [openDate, setOpenDate] = useState(false);
-  const [options, setOptions] = useState(location.state.options);
+  const [options, setOptions] = useState(location?.state?.options ?? '');
 
   return (
     <div>
@@ -84,21 +88,21 @@ const List = () => {
                 </div>
               </div>
             </div>
-          <button>Search</button>
-        </div>
-        <div className="listResult">
-          <SearchItem />
-          <SearchItem />
-          <SearchItem />
-          <SearchItem />
-          <SearchItem />
-          <SearchItem />
-          <SearchItem />
-          <SearchItem />
-          <SearchItem />
+            <button>Search</button>
+          </div>
+          <div className="listResult">
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+          </div>
         </div>
       </div>
-    </div>
     </div>
   )
 }
