@@ -1,7 +1,12 @@
 import React from 'react'
 import './featuredProperty.css'
+import useFetch from '../../hooks/useFetch';
 
 const FeaturedProperty = () => {
+
+  const { data, loading, error } = useFetch("/api/hotels/countBytype");
+
+
     return (
         <div className='fp'>
             <div className="fpItem">
