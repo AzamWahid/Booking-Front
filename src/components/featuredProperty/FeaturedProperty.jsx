@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './featuredProperty.css'
 import useFetch from '../../hooks/useFetch';
+import { SearchContext } from '../../context/SearchContext';
 
 const FeaturedProperty = () => {
 
