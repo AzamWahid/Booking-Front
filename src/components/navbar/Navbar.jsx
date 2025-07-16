@@ -8,7 +8,7 @@ const Navbar = () => {
 
     const navigate = useNavigate();
     ;
-    const { user } = useContext(AuthContext);
+    const { user ,dispatch} = useContext(AuthContext);
 
     const logoutHandler = async () => {
 
@@ -19,7 +19,9 @@ const Navbar = () => {
                 { withCredentials: true }
             );
             localStorage.removeItem('user');
+            dispatch({ type: "LOGOUT" });
             navigate('/');
+
         } catch (err) {
             console.error("Logout failed", err);
         }
