@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': 'http://localhost:8800',
+      '/api': 'https://bookingbackend-production-36e0.up.railway.app',
     },
   },
 })
