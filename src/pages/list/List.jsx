@@ -24,7 +24,7 @@ const List = () => {
 
 
   const { data, loading, error,reFetch } = useFetch(
-    `${import.meta.env.VITE_API}/hotels?city=${destination}&min=${min || 0 }&max=${max || 999}`);
+    `${import.meta.env.VITE_API}/hotels?city=${destination}&min=${min || 0 }&max=${max || 9999999}`);
  
     const handleClick = () => {
     reFetch();
@@ -40,7 +40,7 @@ const List = () => {
             <h1 className="lsTitle">Search </h1>
             <div className="lsItem">
               <label>Destination</label>
-              <input placeholder={destination} type="text" />
+              <input placeholder={destination} onChange={(e) => setDestination(e.target.value)}  type="text" />
             </div>
             <div className="lsItem">
               <label>Check-in Date</label>
