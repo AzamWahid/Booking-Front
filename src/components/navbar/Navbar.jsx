@@ -19,7 +19,7 @@ const Navbar = () => {
                 { withCredentials: true }
             );
             localStorage.removeItem('user');
-            navigate('/login');
+            navigate('/');
         } catch (err) {
             console.error("Logout failed", err);
         }
