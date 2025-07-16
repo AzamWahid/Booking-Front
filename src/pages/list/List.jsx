@@ -24,7 +24,7 @@ const List = () => {
 
 
   const { data, loading, error,reFetch } = useFetch(
-    `/api/hotels?city=${destination}&min=${min || 0 }&max=${max || 999}`);
+    `${import.meta.env.VITE_API}/hotels?city=${destination}&min=${min || 0 }&max=${max || 999}`);
  
     const handleClick = () => {
     reFetch();

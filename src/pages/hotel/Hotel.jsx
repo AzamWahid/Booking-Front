@@ -27,7 +27,7 @@ const Hotel = () => {
   const [openModal, setOpenModal] = useState(false);
 
   const { data, loading, error } = useFetch(
-    `/api/hotels/find/${id}`);
+    `${import.meta.env.VITE_API}/hotels/find/${id}`);
 
 
   const { dates, options } = useContext(SearchContext)

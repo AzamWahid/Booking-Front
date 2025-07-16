@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 const Reverse = ({ setOpen, hotelId }) => {
 
     const [selectedRooms, setSelectedRooms] = useState([]);
-    const { data, loading, error } = useFetch(`/api/hotels/room/${hotelId}`);
+    const { data, loading, error } = useFetch(`${import.meta.env.VITE_API}/hotels/room/${hotelId}`);
     const { dates } = useContext(SearchContext);
 
     const getDatesInRange = (startDate, endDate) => {
@@ -49,7 +49,7 @@ const Reverse = ({ setOpen, hotelId }) => {
     const handleClick = async () => {
         try {
             await Promise.all(selectedRooms.map((roomId) => {
-                const res = axios.put(`/api/rooms/availability/${roomId}`, {
+                const res = axios.put(`${import.meta.env.VITE_API}/rooms/availability/${roomId}`, {
                     dates: alldates,
                 })
                 return res.date;

@@ -4,9 +4,9 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  server: {
-    proxy: {
-      '/api': 'https://bookingbackend-production-36e0.up.railway.app',
-    },
-  },
+  // server: {
+  //   proxy: {
+  //     '/api': 'https://bookingbackend-production-36e0.up.railway.app',
+  //   },
+  // },
 })
